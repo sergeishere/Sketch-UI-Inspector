@@ -8,12 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		A50380C7215EB400004C30AF /* Sketch_UI_Inspector.h in Headers */ = {isa = PBXBuildFile; fileRef = A50380C5215EB400004C30AF /* Sketch_UI_Inspector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A51E6441215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E6440215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift */; };
+		A51E6443215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E6442215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift */; };
+		A55E938F215EB860001F871A /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E938E215EB860001F871A /* OSLog.swift */; };
+		A58C5273215EC52E000FA1F7 /* NSNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58C5272215EC52E000FA1F7 /* NSNib.swift */; };
+		A5D70CA1215EEBB600C6B701 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D70CA0215EEBB600C6B701 /* NSObject.swift */; };
+		A5D70CA3215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D70CA2215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift */; };
+		A5D70CA5215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D70CA4215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift */; };
+		A5F1F451215EB55400E6031B /* Sketch_UI_Inspector.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A50380C2215EB400004C30AF /* Sketch_UI_Inspector.framework */; };
+		A5F1F453215EB58500E6031B /* PluginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F1F452215EB58500E6031B /* PluginController.swift */; };
+		A5F4FDA6215EB9680038C775 /* InspectorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4FDA4215EB9680038C775 /* InspectorWindowController.swift */; };
+		A5F4FDA7215EB9680038C775 /* InspectorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F4FDA5215EB9680038C775 /* InspectorWindowController.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A5F1F450215EB54500E6031B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "/Users/Sergey/Dev/Sketch UI Inspector/SketchUIInspector.sketchplugin/Contents/Resources";
+			dstSubfolderSpec = 0;
+			files = (
+				A5F1F451215EB55400E6031B /* Sketch_UI_Inspector.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A50380C2215EB400004C30AF /* Sketch_UI_Inspector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sketch_UI_Inspector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50380C5215EB400004C30AF /* Sketch_UI_Inspector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sketch_UI_Inspector.h; sourceTree = "<group>"; };
 		A50380C6215EB400004C30AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A51E6440215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSOutlineViewDataSource.swift"; sourceTree = "<group>"; };
+		A51E6442215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSOutlineViewDelegate.swift"; sourceTree = "<group>"; };
+		A55E938E215EB860001F871A /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
+		A58C5272215EC52E000FA1F7 /* NSNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNib.swift; sourceTree = "<group>"; };
+		A5D70CA0215EEBB600C6B701 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		A5D70CA2215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
+		A5D70CA4215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
+		A5F1F452215EB58500E6031B /* PluginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginController.swift; sourceTree = "<group>"; };
+		A5F4FDA4215EB9680038C775 /* InspectorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorWindowController.swift; sourceTree = "<group>"; };
+		A5F4FDA5215EB9680038C775 /* InspectorWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspectorWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +80,52 @@
 		A50380C4215EB400004C30AF /* Sketch UI Inspector */ = {
 			isa = PBXGroup;
 			children = (
-				A50380C5215EB400004C30AF /* Sketch_UI_Inspector.h */,
+				A55E938D215EB831001F871A /* Controllers */,
+				A5F4FDA1215EB8AF0038C775 /* Extensions */,
 				A50380C6215EB400004C30AF /* Info.plist */,
+				A5F4FDA3215EB94C0038C775 /* Views */,
 			);
 			path = "Sketch UI Inspector";
+			sourceTree = "<group>";
+		};
+		A55E938D215EB831001F871A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A50380C5215EB400004C30AF /* Sketch_UI_Inspector.h */,
+				A5F1F452215EB58500E6031B /* PluginController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A5D70CA6215EF74F00C6B701 /* Inspector Window */ = {
+			isa = PBXGroup;
+			children = (
+				A5F4FDA4215EB9680038C775 /* InspectorWindowController.swift */,
+				A5D70CA2215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift */,
+				A51E6442215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift */,
+				A51E6440215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift */,
+				A5F4FDA5215EB9680038C775 /* InspectorWindowController.xib */,
+				A5D70CA4215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift */,
+			);
+			path = "Inspector Window";
+			sourceTree = "<group>";
+		};
+		A5F4FDA1215EB8AF0038C775 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A55E938E215EB860001F871A /* OSLog.swift */,
+				A58C5272215EC52E000FA1F7 /* NSNib.swift */,
+				A5D70CA0215EEBB600C6B701 /* NSObject.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A5F4FDA3215EB94C0038C775 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5D70CA6215EF74F00C6B701 /* Inspector Window */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +150,7 @@
 				A50380BE215EB400004C30AF /* Sources */,
 				A50380BF215EB400004C30AF /* Frameworks */,
 				A50380C0215EB400004C30AF /* Resources */,
+				A5F1F450215EB54500E6031B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -95,6 +172,7 @@
 				TargetAttributes = {
 					A50380C1215EB400004C30AF = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -120,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F4FDA7215EB9680038C775 /* InspectorWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +209,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58C5273215EC52E000FA1F7 /* NSNib.swift in Sources */,
+				A51E6441215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift in Sources */,
+				A5F4FDA6215EB9680038C775 /* InspectorWindowController.swift in Sources */,
+				A5D70CA3215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift in Sources */,
+				A5D70CA5215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift in Sources */,
+				A5D70CA1215EEBB600C6B701 /* NSObject.swift in Sources */,
+				A55E938F215EB860001F871A /* OSLog.swift in Sources */,
+				A5F1F453215EB58500E6031B /* PluginController.swift in Sources */,
+				A51E6443215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -246,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -260,6 +348,8 @@
 		A50380CB215EB400004C30AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -276,9 +366,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sergeishere.Sketch-UI-Inspector";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -286,6 +378,8 @@
 		A50380CC215EB400004C30AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -302,6 +396,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sergeishere.Sketch-UI-Inspector";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
