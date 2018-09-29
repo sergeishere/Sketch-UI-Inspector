@@ -16,11 +16,28 @@ extension InspectorWindowController: NSOutlineViewDelegate {
     
     public func outlineViewSelectionDidChange(_ notification: Notification) {
         guard let selectedItem = inspectorOutlineView.item(atRow: inspectorOutlineView.selectedRow) as? NSObject else { return }
-        properties = [String:Any?]()
+        
+        if let selectedView = selectedItem as? NSView {
+            plugin_log("%@", String(describing: selectedView.frame))
+            if let previousRow = self.previousSelectedRow,
+                let previousView = inspectorOutlineView.item(atRow: previousRow) as? NSView,
+                let temporaryLayer = self.temporaryLayer {
+                previousView.layer = temporaryLayer
+            }
+            selectedView.wantsLayer = true
+            self.temporaryLayer = selectedView.layer?.copy() as? CALayer
+            selectedView.layer?.borderColor = NSColor.red.cgColor
+            selectedView.layer?.borderWidth = 2.0
+            self.previousSelectedRow = inspectorOutlineView.selectedRow
+        }
+        
+        self.properties = [String:Any?]()
         for property in selectedItem.properties() {
             guard let value = selectedItem.value(forKey: property) else { continue }
             properties[property] = value
         }
+        
+        
         
         inspectorTableView.reloadData()
     }

@@ -15,6 +15,9 @@ public class InspectorWindowController: NSWindowController {
     
     var properties = [String: Any?]()
     
+    var temporaryLayer: CALayer?
+    var previousSelectedRow: Int?
+    
     override public func windowDidLoad() {
         super.windowDidLoad()
         inspectorOutlineView.dataSource = self

@@ -1,0 +1,11 @@
+framework module Sketch_UI_Inspector {
+  umbrella header "Sketch_UI_Inspector.h"
+
+  export *
+  module * { export * }
+}
+
+module Sketch_UI_Inspector.Swift {
+    header "Sketch_UI_Inspector-Swift.h"
+    requires objc
+}

@@ -1,0 +1,32 @@
+{
+    "commands": [
+        {
+            "script": "script.js",
+            "name": "Open Inspector",
+            "handlers": {
+                "run": "onOpen"
+            },
+            "identifier": "com.sergeishere.plugins.sketchuiinspector.open"
+        },
+        {
+            "script": "script.js",
+            "handlers": {
+                "Startup": "onStart"
+            }
+        }
+    ],
+    "menu": {
+        "title": "Sketch UI Inspector",
+        "items": ["com.sergeishere.plugins.sketchuiinspector.open"]
+    },
+    "identifier": "com.sergeishere.plugins.sketchuiinspector",
+    "version": "0.1",
+    "description": "",
+    "homepage": "",
+    "author": "Sergey Dmitriev",
+    "authorEmail": "el.pajaro.sabio@gmail.com",
+    "name": "Sketch UI Inspector",
+    "icon": "",
+    "appcast": "",
+    "disableCocoaScriptPreprocessor": true
+}
