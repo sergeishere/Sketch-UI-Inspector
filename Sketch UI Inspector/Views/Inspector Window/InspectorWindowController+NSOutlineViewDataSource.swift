@@ -9,6 +9,7 @@
 extension InspectorWindowController: NSOutlineViewDataSource {
     
     public func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
+        
         if let document = item as? NSDocument {
             return document.windowControllers.count
         }
@@ -21,6 +22,12 @@ extension InspectorWindowController: NSOutlineViewDataSource {
             return 1
         }
         if let view = item as? NSView {
+            if let window = view.window,
+                let contentView = window.contentView,
+                view.isEqual(contentView),
+                view.subviews.contains(self.highlightingView!) {
+                return view.subviews.count - 1
+            }
             return view.subviews.count
         }
         return NSDocumentController.shared.documents.count
@@ -57,7 +64,10 @@ extension InspectorWindowController: NSOutlineViewDataSource {
             return contentView
         }
         if let view = item as? NSView {
-            return view.subviews[index]
+            let childView = view.subviews[index]
+            if childView !== self.highlightingView {
+                return childView
+            }
         }
         return NSDocumentController.shared.documents[index]
     }

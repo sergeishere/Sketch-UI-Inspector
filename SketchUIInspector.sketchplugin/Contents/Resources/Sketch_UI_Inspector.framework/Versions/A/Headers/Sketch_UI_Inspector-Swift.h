@@ -163,9 +163,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
-@import AppKit;
-@import Foundation;
-@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -182,45 +179,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="Sketch_UI_Inspector",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
-
-@class NSWindow;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC19Sketch_UI_Inspector25InspectorWindowController")
-@interface InspectorWindowController : NSWindowController
-- (void)windowDidLoad;
-- (nonnull instancetype)initWithWindow:(NSWindow * _Nullable)window OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSTableView;
-
-@interface InspectorWindowController (SWIFT_EXTENSION(Sketch_UI_Inspector)) <NSTableViewDataSource>
-- (NSInteger)numberOfRowsInTableView:(NSTableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
-@end
-
-@class NSTableColumn;
-@class NSView;
-
-@interface InspectorWindowController (SWIFT_EXTENSION(Sketch_UI_Inspector)) <NSTableViewDelegate>
-- (NSView * _Nullable)tableView:(NSTableView * _Nonnull)tableView viewForTableColumn:(NSTableColumn * _Nullable)tableColumn row:(NSInteger)row SWIFT_WARN_UNUSED_RESULT;
-@end
-
-@class NSOutlineView;
-
-@interface InspectorWindowController (SWIFT_EXTENSION(Sketch_UI_Inspector)) <NSOutlineViewDelegate>
-- (NSView * _Nullable)outlineView:(NSOutlineView * _Nonnull)outlineView viewForTableColumn:(NSTableColumn * _Nullable)tableColumn item:(id _Nonnull)item SWIFT_WARN_UNUSED_RESULT;
-- (void)outlineViewSelectionDidChange:(NSNotification * _Nonnull)notification;
-@end
-
-
-@interface InspectorWindowController (SWIFT_EXTENSION(Sketch_UI_Inspector)) <NSOutlineViewDataSource>
-- (NSInteger)outlineView:(NSOutlineView * _Nonnull)outlineView numberOfChildrenOfItem:(id _Nullable)item SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)outlineView:(NSOutlineView * _Nonnull)outlineView isItemExpandable:(id _Nonnull)item SWIFT_WARN_UNUSED_RESULT;
-- (id _Nonnull)outlineView:(NSOutlineView * _Nonnull)outlineView child:(NSInteger)index ofItem:(id _Nullable)item SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

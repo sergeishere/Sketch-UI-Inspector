@@ -12,9 +12,10 @@
 		A51E6443215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E6442215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift */; };
 		A55E938F215EB860001F871A /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E938E215EB860001F871A /* OSLog.swift */; };
 		A58C5273215EC52E000FA1F7 /* NSNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58C5272215EC52E000FA1F7 /* NSNib.swift */; };
-		A5D70CA1215EEBB600C6B701 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D70CA0215EEBB600C6B701 /* NSObject.swift */; };
 		A5D70CA3215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D70CA2215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift */; };
 		A5D70CA5215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D70CA4215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift */; };
+		A5D70CB9215F03CC00C6B701 /* NSObject+NSObject_PropertyList.h in Headers */ = {isa = PBXBuildFile; fileRef = A5D70CB7215F03CC00C6B701 /* NSObject+NSObject_PropertyList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5D70CBA215F03CC00C6B701 /* NSObject+NSObject_PropertyList.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D70CB8215F03CC00C6B701 /* NSObject+NSObject_PropertyList.m */; };
 		A5F1F451215EB55400E6031B /* Sketch_UI_Inspector.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A50380C2215EB400004C30AF /* Sketch_UI_Inspector.framework */; };
 		A5F1F453215EB58500E6031B /* PluginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F1F452215EB58500E6031B /* PluginController.swift */; };
 		A5F4FDA6215EB9680038C775 /* InspectorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4FDA4215EB9680038C775 /* InspectorWindowController.swift */; };
@@ -42,9 +43,10 @@
 		A51E6442215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSOutlineViewDelegate.swift"; sourceTree = "<group>"; };
 		A55E938E215EB860001F871A /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 		A58C5272215EC52E000FA1F7 /* NSNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNib.swift; sourceTree = "<group>"; };
-		A5D70CA0215EEBB600C6B701 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		A5D70CA2215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
 		A5D70CA4215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
+		A5D70CB7215F03CC00C6B701 /* NSObject+NSObject_PropertyList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSObject_PropertyList.h"; sourceTree = "<group>"; };
+		A5D70CB8215F03CC00C6B701 /* NSObject+NSObject_PropertyList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSObject_PropertyList.m"; sourceTree = "<group>"; };
 		A5F1F452215EB58500E6031B /* PluginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginController.swift; sourceTree = "<group>"; };
 		A5F4FDA4215EB9680038C775 /* InspectorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorWindowController.swift; sourceTree = "<group>"; };
 		A5F4FDA5215EB9680038C775 /* InspectorWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InspectorWindowController.xib; sourceTree = "<group>"; };
@@ -115,7 +117,8 @@
 			children = (
 				A55E938E215EB860001F871A /* OSLog.swift */,
 				A58C5272215EC52E000FA1F7 /* NSNib.swift */,
-				A5D70CA0215EEBB600C6B701 /* NSObject.swift */,
+				A5D70CB7215F03CC00C6B701 /* NSObject+NSObject_PropertyList.h */,
+				A5D70CB8215F03CC00C6B701 /* NSObject+NSObject_PropertyList.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D70CB9215F03CC00C6B701 /* NSObject+NSObject_PropertyList.h in Headers */,
 				A50380C7215EB400004C30AF /* Sketch_UI_Inspector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,7 +218,7 @@
 				A5F4FDA6215EB9680038C775 /* InspectorWindowController.swift in Sources */,
 				A5D70CA3215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift in Sources */,
 				A5D70CA5215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift in Sources */,
-				A5D70CA1215EEBB600C6B701 /* NSObject.swift in Sources */,
+				A5D70CBA215F03CC00C6B701 /* NSObject+NSObject_PropertyList.m in Sources */,
 				A55E938F215EB860001F871A /* OSLog.swift in Sources */,
 				A5F1F453215EB58500E6031B /* PluginController.swift in Sources */,
 				A51E6443215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift in Sources */,
@@ -349,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

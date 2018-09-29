@@ -200,9 +200,9 @@
                     <constraint firstAttribute="trailing" secondItem="WRc-kC-Qic" secondAttribute="trailing" constant="8" id="zTx-eu-B76"/>
                 </constraints>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="FA362E95-BD79-4598-B095-540C49B6872A" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="gQc-uw-Cib">
+            <toolbar key="toolbar" implicitIdentifier="FA362E95-BD79-4598-B095-540C49B6872A" centeredItem="b81-ts-e3D" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="gQc-uw-Cib">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="45E17AAD-D3A5-4FF0-8E87-C95C506C34C6" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="b81-ts-e3D">
+                    <toolbarItem implicitItemIdentifier="45E17AAD-D3A5-4FF0-8E87-C95C506C34C6" label="Window Title" paletteLabel="Window Title" sizingBehavior="auto" id="b81-ts-e3D">
                         <nil key="toolTip"/>
                         <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="TQ8-KH-Y8f">
                             <rect key="frame" x="0.0" y="14" width="127" height="17"/>
@@ -214,12 +214,27 @@
                             </textFieldCell>
                         </textField>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="69BB6ED6-FC3D-425C-9CF5-0E8AFA946079" label="Reload" paletteLabel="Reload" image="NSRefreshTemplate" sizingBehavior="auto" id="i1N-cG-8Ut">
+                        <nil key="toolTip"/>
+                        <button key="view" verticalHuggingPriority="750" id="7ZO-6a-CEF">
+                            <rect key="frame" x="0.0" y="14" width="82" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aBl-iB-iOw">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <connections>
+                            <action selector="reloadData:" target="-2" id="VRz-9M-5xX"/>
+                        </connections>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="LCa-xI-V6c"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="LCa-xI-V6c"/>
                     <toolbarItem reference="b81-ts-e3D"/>
                     <toolbarItem reference="LCa-xI-V6c"/>
+                    <toolbarItem reference="i1N-cG-8Ut"/>
                 </defaultToolbarItems>
             </toolbar>
             <connections>
@@ -228,4 +243,7 @@
             <point key="canvasLocation" x="38" y="32"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
+    </resources>
 </document>

@@ -12,7 +12,7 @@ extension InspectorWindowController: NSTableViewDelegate {
         switch tableColumn?.identifier {
         case NSUserInterfaceItemIdentifier(rawValue:"KeyColumn"):
             guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "KeyCell"), owner: self) as? NSTableCellView else { return nil }
-            cell.textField?.stringValue = Array(properties.keys)[row]
+            cell.textField?.stringValue =  String(describing: Array(properties.keys)[row])
             return cell
         case NSUserInterfaceItemIdentifier(rawValue:"ValueColumn"):
             guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ValueCell"), owner: self) as? NSTableCellView else { return nil }
