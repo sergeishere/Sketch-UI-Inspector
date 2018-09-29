@@ -13,6 +13,9 @@ class InspectorWindowController: NSWindowController {
     @IBOutlet weak var inspectorOutlineView: NSOutlineView!
     @IBOutlet weak var inspectorTableView: NSTableView!
     
+    @IBOutlet weak var classNameLabel: NSTextField!
+    @IBOutlet weak var superclassNameLabel: NSTextField!
+    
     var properties = [AnyHashable: Any]()
 
     var highlightingView: NSView?
@@ -34,26 +37,40 @@ class InspectorWindowController: NSWindowController {
             highlightingView?.layer?.borderColor = NSColor.clear.cgColor
             contentView.addSubview(highlightingView!)
         }
+        
+        self.reloadData(nil)
     }
     
     // MARK: - Public methods
-    func inspect(_ item: Any) {
-        self.removeHighlighting()
+    func inspect(_ item: AnyObject) {
         
-        if let view = item as? NSView {
-            self.highlight(view)
+        if let objectClass = item.classForCoder {
+            self.classNameLabel.stringValue = String(describing: objectClass)
+            
+        }
+        
+        if let superclass = item.classForCoder.superclass() {
+            self.superclassNameLabel.stringValue = String(describing: superclass)
         }
         
         if let object = item as? NSObject {
             self.properties = object.propertyList()
         }
         
+        self.removeHighlighting()
+        if let view = item as? NSView {
+            self.highlight(view)
+        }
+        
+       
         inspectorTableView.reloadData()
     }
     
     func resetInspector() {
         self.removeHighlighting()
         self.properties = [:]
+        self.classNameLabel.stringValue = "-"
+        self.superclassNameLabel.stringValue = "-"
         inspectorTableView.reloadData()
     }
     
@@ -64,8 +81,7 @@ class InspectorWindowController: NSWindowController {
             self.highlightingView?.layer?.borderColor = NSColor.alternateSelectedControlColor.cgColor
         }
         let frameInWindow = view.convert(view.bounds, to: nil)
-        let selectionFrame = frameInWindow.insetBy(dx: -1.0, dy: -1.0)
-        self.highlightingView?.frame = selectionFrame
+        self.highlightingView?.frame = frameInWindow
     }
     
     func removeHighlighting() {
@@ -74,9 +90,10 @@ class InspectorWindowController: NSWindowController {
     
     // MARK: - IBActions
     
-    @IBAction func reloadData(_ sender: Any) {
+    @IBAction func reloadData(_ sender: Any?) {
         self.inspectorOutlineView.reloadData()
         self.inspectorOutlineView.deselectAll(nil)
+        self.inspectorOutlineView.expandItem(nil, expandChildren: true)
         self.resetInspector()
     }
 

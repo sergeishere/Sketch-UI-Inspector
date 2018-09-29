@@ -10,8 +10,7 @@ extension InspectorWindowController: NSOutlineViewDelegate {
     
     public func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         guard let cell = inspectorOutlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CommonCell"), owner: self) as? NSTableCellView else { return nil}
-        let stringValue = (item as? NSView === self.highlightingView) ? "Inspector's highlighting view" : String(describing: item)
-        cell.textField?.stringValue = stringValue
+        cell.textField?.stringValue = (item as? NSObject)?.className ?? "Undefined"
         return cell
     }
     
@@ -20,7 +19,7 @@ extension InspectorWindowController: NSOutlineViewDelegate {
             self.resetInspector()
             return
         }
-        self.inspect(selectedItem)
+        self.inspect(selectedItem as AnyObject)
     }
     
 }
