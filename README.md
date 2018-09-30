@@ -1,6 +1,6 @@
 # Sketch UI Inspector
 
-The app UI inspecting tool for the Sketch App.
+The app UI inspecting tool for the Sketch App. Work in progress. Requires macOS 10.13+.
 
 ## Usage
 
