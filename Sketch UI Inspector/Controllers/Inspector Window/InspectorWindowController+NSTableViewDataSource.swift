@@ -9,7 +9,7 @@
 extension InspectorWindowController: NSTableViewDataSource {
     
     public func numberOfRows(in tableView: NSTableView) -> Int {
-        return properties.keys.count
+        return properties.count
     }
     
 }

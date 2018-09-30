@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <NSObject+NSObject_PropertyList.h>
 
 //! Project version number for Sketch_UI_Inspector.
 FOUNDATION_EXPORT double Sketch_UI_InspectorVersionNumber;

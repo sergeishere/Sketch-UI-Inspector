@@ -15,11 +15,8 @@ extension InspectorWindowController: NSOutlineViewDelegate {
     }
     
     public func outlineViewSelectionDidChange(_ notification: Notification) {
-        guard let selectedItem = inspectorOutlineView.item(atRow: inspectorOutlineView.selectedRow) else {
-            self.resetInspector()
-            return
-        }
-        self.inspect(selectedItem as AnyObject)
+        let selectedItem = inspectorOutlineView.item(atRow: inspectorOutlineView.selectedRow)
+        self.inspect(selectedItem)
     }
     
 }

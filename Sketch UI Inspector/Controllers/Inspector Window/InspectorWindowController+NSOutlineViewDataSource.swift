@@ -25,7 +25,7 @@ extension InspectorWindowController: NSOutlineViewDataSource {
             if let window = view.window,
                 let contentView = window.contentView,
                 view.isEqual(contentView),
-                view.subviews.contains(self.highlightingView!) {
+                view.subviews.contains(self.highlightingView) {
                 return view.subviews.count - 1
             }
             return view.subviews.count

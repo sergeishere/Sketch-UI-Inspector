@@ -9,17 +9,18 @@
 extension InspectorWindowController: NSTableViewDelegate {
     
     public func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PropertiesCell"), owner: self) as? NSTableCellView else { return nil }
         switch tableColumn?.identifier {
         case NSUserInterfaceItemIdentifier(rawValue:"KeyColumn"):
-            guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "KeyCell"), owner: self) as? NSTableCellView else { return nil }
-            cell.textField?.stringValue =  String(describing: Array(properties.keys)[row])
-            return cell
+            cell.textField?.stringValue =  properties[row].name
+        case NSUserInterfaceItemIdentifier(rawValue:"TypeColumn"):
+            cell.textField?.stringValue = properties[row].type
         case NSUserInterfaceItemIdentifier(rawValue:"ValueColumn"):
-            guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ValueCell"), owner: self) as? NSTableCellView else { return nil }
-            cell.textField?.stringValue = String(describing: Array(properties.values)[row])
-            return cell
+            cell.textField?.stringValue = properties[row].value
+            
         default:
             return NSView()
         }
+        return cell
     }
 }
