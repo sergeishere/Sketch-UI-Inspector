@@ -1,6 +1,6 @@
 /images export-ignore
-/Sketch UI Inspector export-ignore
-/Sketch UI Inspector.xcodeproj export-ignore
+/Sketch\ UI\ Inspector export-ignore
+/Sketch\ UI\ Inspector.xcodeproj export-ignore
 
 README.md export-ignore
 .gitattributes export-ignore
