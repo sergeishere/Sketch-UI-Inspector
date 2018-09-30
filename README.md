@@ -4,6 +4,6 @@ The app UI inspecting tool for the Sketch App.
 
 ## Usage
 
-[Download plugin](/SketchUIInspector.sketchplugin) and install. Then open inspector from the plugins menu.
+[Download plugin](https://github.com/sergeishere/Sketch-UI-Inspector/archive/master.zip) and install. Then open inspector from the plugins menu.
 
 ![Preview](images/screenshot.png)
