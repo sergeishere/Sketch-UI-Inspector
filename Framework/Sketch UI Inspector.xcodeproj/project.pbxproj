@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A50380C7215EB400004C30AF /* Sketch_UI_Inspector.h in Headers */ = {isa = PBXBuildFile; fileRef = A50380C5215EB400004C30AF /* Sketch_UI_Inspector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5120C76216102EF00AF64BB /* NSBezierPath+cgPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5120C75216102EF00AF64BB /* NSBezierPath+cgPath.swift */; };
 		A51E6441215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E6440215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift */; };
 		A51E6443215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E6442215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift */; };
-		A55E938F215EB860001F871A /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E938E215EB860001F871A /* OSLog.swift */; };
-		A58C5273215EC52E000FA1F7 /* NSNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58C5272215EC52E000FA1F7 /* NSNib.swift */; };
+		A55E938F215EB860001F871A /* OSLog+plugin_log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E938E215EB860001F871A /* OSLog+plugin_log.swift */; };
+		A58C5273215EC52E000FA1F7 /* NSNib+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58C5272215EC52E000FA1F7 /* NSNib+Names.swift */; };
 		A5D69DCA2160545B0073195E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D69DC92160545B0073195E /* Utils.swift */; };
 		A5D69DCC21605B0B0073195E /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D69DCB21605B0B0073195E /* Property.swift */; };
 		A5D70CA3215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D70CA2215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift */; };
@@ -39,10 +40,11 @@
 		A50380C2215EB400004C30AF /* Sketch_UI_Inspector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sketch_UI_Inspector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50380C5215EB400004C30AF /* Sketch_UI_Inspector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sketch_UI_Inspector.h; sourceTree = "<group>"; };
 		A50380C6215EB400004C30AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5120C75216102EF00AF64BB /* NSBezierPath+cgPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+cgPath.swift"; sourceTree = "<group>"; };
 		A51E6440215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSOutlineViewDataSource.swift"; sourceTree = "<group>"; };
 		A51E6442215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSOutlineViewDelegate.swift"; sourceTree = "<group>"; };
-		A55E938E215EB860001F871A /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
-		A58C5272215EC52E000FA1F7 /* NSNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNib.swift; sourceTree = "<group>"; };
+		A55E938E215EB860001F871A /* OSLog+plugin_log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+plugin_log.swift"; sourceTree = "<group>"; };
+		A58C5272215EC52E000FA1F7 /* NSNib+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNib+Names.swift"; sourceTree = "<group>"; };
 		A5D69DC92160545B0073195E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A5D69DCB21605B0B0073195E /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		A5D70CA2215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorWindowController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -117,8 +119,9 @@
 		A5F4FDA1215EB8AF0038C775 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A55E938E215EB860001F871A /* OSLog.swift */,
-				A58C5272215EC52E000FA1F7 /* NSNib.swift */,
+				A55E938E215EB860001F871A /* OSLog+plugin_log.swift */,
+				A58C5272215EC52E000FA1F7 /* NSNib+Names.swift */,
+				A5120C75216102EF00AF64BB /* NSBezierPath+cgPath.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,13 +216,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5D69DCC21605B0B0073195E /* Property.swift in Sources */,
-				A58C5273215EC52E000FA1F7 /* NSNib.swift in Sources */,
+				A58C5273215EC52E000FA1F7 /* NSNib+Names.swift in Sources */,
 				A51E6441215EE23500F65267 /* InspectorWindowController+NSOutlineViewDataSource.swift in Sources */,
 				A5D69DCA2160545B0073195E /* Utils.swift in Sources */,
 				A5F4FDA6215EB9680038C775 /* InspectorWindowController.swift in Sources */,
 				A5D70CA3215EF71D00C6B701 /* InspectorWindowController+NSTableViewDelegate.swift in Sources */,
 				A5D70CA5215EF73F00C6B701 /* InspectorWindowController+NSTableViewDataSource.swift in Sources */,
-				A55E938F215EB860001F871A /* OSLog.swift in Sources */,
+				A5120C76216102EF00AF64BB /* NSBezierPath+cgPath.swift in Sources */,
+				A55E938F215EB860001F871A /* OSLog+plugin_log.swift in Sources */,
 				A5F1F453215EB58500E6031B /* PluginController.swift in Sources */,
 				A51E6443215EE25200F65267 /* InspectorWindowController+NSOutlineViewDelegate.swift in Sources */,
 			);

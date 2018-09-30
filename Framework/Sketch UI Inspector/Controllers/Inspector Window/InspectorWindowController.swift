@@ -19,6 +19,12 @@ class InspectorWindowController: NSWindowController, NSWindowDelegate {
     var properties = [Property]()
     
     var highlightingView: NSView = NSView()
+    let overlayLayer = CAShapeLayer()
+    
+    var overlayPath = NSBezierPath()
+    var maskPath = NSBezierPath()
+    
+    var rootView: NSView?
     
     // MARK: - Lifecycle
     override func windowDidLoad() {
@@ -29,9 +35,30 @@ class InspectorWindowController: NSWindowController, NSWindowDelegate {
         self.inspectorTableView.dataSource = self
         self.inspectorTableView.delegate = self
         
-        self.highlightingView.wantsLayer = true
-        self.highlightingView.layer?.borderWidth = 2.0
-        self.highlightingView.layer?.borderColor = NSColor.clear.cgColor
+        if let window = NSApp.mainWindow,
+            let contentView = window.contentView {
+            rootView = contentView
+            self.highlightingView.frame = self.rootView!.bounds
+            self.highlightingView.wantsLayer = true
+            
+            overlayPath = NSBezierPath(rect: self.rootView!.bounds.insetBy(dx: -1, dy: -1))
+            maskPath = NSBezierPath(rect: self.rootView!.bounds)
+            overlayPath.append(maskPath)
+            overlayPath.windingRule = .evenOdd
+            
+            overlayLayer.path = overlayPath.cgPath
+            overlayLayer.fillColor = NSColor.black.withAlphaComponent(0.5).cgColor
+            overlayLayer.fillRule = .evenOdd
+
+            self.highlightingView.layer?.addSublayer(overlayLayer)
+            
+            self.overlayLayer.lineWidth = 1.0
+            if #available(OSX 10.14, *) {
+                self.overlayLayer.strokeColor = NSColor.controlAccentColor.cgColor
+            } else {
+                self.overlayLayer.strokeColor = NSColor.alternateSelectedControlColor.cgColor
+            }
+        }
         
         self.window?.level = .normal
         
@@ -45,6 +72,11 @@ class InspectorWindowController: NSWindowController, NSWindowDelegate {
     
     func windowWillClose(_ notification: Notification) {
          self.deattachHighlightingView()
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        self.inspectorOutlineView.deselectRow(self.inspectorOutlineView.selectedRow)
     }
     
     // MARK: - Public methods
@@ -94,17 +126,19 @@ class InspectorWindowController: NSWindowController, NSWindowDelegate {
     }
     
     func highlight(_ view: NSView) {
-        if #available(OSX 10.14, *) {
-            self.highlightingView.layer?.borderColor = NSColor.controlAccentColor.cgColor
-        } else {
-            self.highlightingView.layer?.borderColor = NSColor.alternateSelectedControlColor.cgColor
-        }
+        self.highlightingView.isHidden = false
+        guard let rootView = self.rootView else { return }
+        
         let frameInWindow = view.convert(view.bounds, to: nil)
-        self.highlightingView.frame = frameInWindow
+        
+        overlayPath = NSBezierPath(rect: rootView.bounds.insetBy(dx: -1, dy: -1))
+        maskPath = NSBezierPath(rect: frameInWindow)
+        overlayPath.append(maskPath)
+        overlayLayer.path = overlayPath.cgPath
     }
     
     func removeHighlighting() {
-        self.highlightingView.layer?.borderColor = NSColor.clear.cgColor
+        self.highlightingView.isHidden = true
     }
     
     // MARK: - IBActions
