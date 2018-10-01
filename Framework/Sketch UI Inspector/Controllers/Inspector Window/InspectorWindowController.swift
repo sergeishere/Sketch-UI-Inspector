@@ -26,6 +26,8 @@ class InspectorWindowController: NSWindowController, NSWindowDelegate {
     
     var rootView: NSView?
     
+    let defaultRowHeight:CGFloat = 17
+    
     // MARK: - Lifecycle
     override func windowDidLoad() {
         super.windowDidLoad()

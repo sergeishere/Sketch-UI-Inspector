@@ -34,7 +34,7 @@ func getTypesOfProperties(for object: Any) -> [Property]? {
             let value = (object as AnyObject).value(forKey: name)
             else { continue }
         let type = getTypeOf(property: property_t)
-        let property = Property(name: name, type: String(describing: type), value: String(describing: value))
+        let property = Property(name: name, type: String(describing: type), value: (value as AnyObject))
         properties?.append(property)
     }
     free(properties_list)
