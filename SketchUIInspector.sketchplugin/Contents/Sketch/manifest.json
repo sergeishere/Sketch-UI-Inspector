@@ -20,13 +20,13 @@
         "items": ["com.sergeishere.plugins.sketchuiinspector.open"]
     },
     "identifier": "com.sergeishere.plugins.sketchuiinspector",
-    "version": "0.1",
-    "description": "",
-    "homepage": "",
+    "version": "0.2",
+    "description": "The UI inspecting tool for the Sketch App.",
+    "homepage": "https://github.com/sergeishere/Sketch-UI-Inspector",
     "author": "Sergey Dmitriev",
     "authorEmail": "el.pajaro.sabio@gmail.com",
     "name": "Sketch UI Inspector",
-    "icon": "",
-    "appcast": "",
+    "icon": "icon.png",
+    "appcast": "https://raw.githubusercontent.com/sergeishere/Sketch-UI-Inspector/master/appcast.xml",
     "disableCocoaScriptPreprocessor": true
 }
