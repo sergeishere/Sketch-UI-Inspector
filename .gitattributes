@@ -3,4 +3,5 @@
 
 README.md export-ignore
 .gitattributes export-ignore
-.assets.sketch export-ignore
+assets.sketch export-ignore
+appcast.xml export-ignore
